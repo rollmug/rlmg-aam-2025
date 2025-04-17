@@ -1,0 +1,52 @@
+{
+  "name": "rlmg-aam-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.12.6",
+    "@apollo/experimental-nextjs-app-support": "^0.11.7",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "clsx": "^2.1.1",
+    "copy-to-clipboard": "^3.3.3",
+    "deep-email-validator": "^0.1.21",
+    "dompurify": "^3.2.3",
+    "encodeurl": "^2.0.0",
+    "framer-motion": "^11.17.0",
+    "highlight.js": "^11.11.1",
+    "html-entities": "^2.5.3",
+    "isomorphic-dompurify": "^2.20.0",
+    "js-md5": "^0.8.3",
+    "markdown-it-attrs": "^4.3.1",
+    "marked": "^15.0.6",
+    "next": "15.1.4",
+    "next-video": "^2.0.0",
+    "plaiceholder": "^3.0.0",
+    "plyr-react": "^5.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hover-video-player": "^10.0.2",
+    "react-icons": "^5.4.0",
+    "sharp": "^0.33.5",
+    "smartquotes": "^2.3.2",
+    "string-strip-html": "^13.4.8",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^4.12.23",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
