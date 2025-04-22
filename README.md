@@ -20,17 +20,16 @@ cd ../
 
 ## SSH Keys
 
-Generate SSH keys on the locakl machine, and authorize them on remote server:
+Generate SSH keys on the local machine, and authorize them on remote server:
 
 ```shell
-ssh-keygen -t rsa -b 4096 -C "dave@rlmg.com"
+ssh-keygen -t rsa -b 4096 -C "my-name@my-email.com"
 ```
 
 ```shell
-ssh-keygen -t rsa -b 4096 -C "dave@rlmg.com"
-ssh-copy-id davek@ACTUAL_REMOTE_IP_HERE
+ssh-copy-id my-user@ACTUAL_REMOTE_IP_HERE
 # test by doing:
-ssh davek@ACTUAL_REMOTE_IP_HERE
+ssh my-user@ACTUAL_REMOTE_IP_HERE
 # then ctrl-d to exit
 ```
 
