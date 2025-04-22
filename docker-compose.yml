@@ -27,6 +27,8 @@ services:
     container_name: rlmg-aam-app
     build:
       context: ./rlmg-aam-app
+      networks:
+        - directus
       # above is the relative path to the app directory
     restart: always
     environment:
