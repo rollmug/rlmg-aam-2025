@@ -16,6 +16,12 @@ const nextConfig = {
                 port: '8055',
                 pathname: '/assets/**/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'directus',
+                port: '8055',
+                pathname: '/assets/**/**',
+            },
         ],
     }
 };

@@ -2,6 +2,15 @@
 
 This app contains utilities to sync data and assets from the remote CMS server, and to build and launch the RLMG Kiosk app.
 
+## Install
+
+```shell
+git clone https://github.com/rollmug/rlmg-aam-2025.git
+```
+```shell
+cd rlmg-aam-2025
+``` 
+
 ## Initialize
 
 **Important!** Update `.env` file and `./rlmg-aam-app/.env.local` with correct variables before proceeding.
