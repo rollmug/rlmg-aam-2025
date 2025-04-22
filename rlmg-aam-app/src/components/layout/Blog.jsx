@@ -36,12 +36,6 @@ const filterPostsByCustomData = (posts, dataLabel, contentOption) => {
 
 export const BlogMainPage = ({ blogData, posts, blogFilters }) => {
     const blogCategories = blogData.blogCategories;
-    // const categories = simplifyCategories(blogCategories);
-    // console.log('categories:', categories);
-    // console.log('posts:', posts);
-
-    // console.log('blogData:', blogData);
-    // console.log('blogFilters:', blogFilters); // topic value
 
     // filterPostsByCustomData
     if (blogFilters && blogFilters?.topic && blogFilters?.value) {
@@ -51,7 +45,7 @@ export const BlogMainPage = ({ blogData, posts, blogFilters }) => {
 
     return (
         <>
-            {(blogFilters && blogFilters?.topic && blogFilters?.value) && (
+            {/* {(blogFilters && blogFilters?.topic && blogFilters?.value) && (
                 <ContentSection>
                     <div className={`section-padded`}>
                         <Link href={`/${blogData.urlSlug}`} className="inline-block">
@@ -62,7 +56,7 @@ export const BlogMainPage = ({ blogData, posts, blogFilters }) => {
                         </Link>
                     </div>
                 </ContentSection>
-            )}
+            )} */}
 
             {blogCategories.map((category, index) => {
                 const categoryName = category.blogCategories_id.categoryName;

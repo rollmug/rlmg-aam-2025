@@ -5,6 +5,8 @@ import { ErrorPage } from "@/components/layout/ErrorPage";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ContentBlocks } from "@/components/layout/ContentBlocks";
 
+import { BlogFilterProvider } from "./blogFilterContext";
+
 export async function generateMetadata() {
     let data;
     try {
@@ -39,7 +41,9 @@ export default async function Home() {
 
     return (
         <PageLayout {...data.layoutParams}>
-            <ContentBlocks data={data} />
+            <BlogFilterProvider>
+                <ContentBlocks data={data} />
+            </BlogFilterProvider>
         </PageLayout>
     )
 }

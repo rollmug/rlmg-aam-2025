@@ -16,6 +16,9 @@ export default async function RootLayout({ children }) {
   const homePage = globalSettings.homePage.key;
   const pageData = await getPageById(homePage);
 
+  // console.log('homePage', homePage);
+  // console.log('pageData', pageData);
+
   const data = {
     globalSettings,
     navigation,
@@ -34,27 +37,3 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
-
-// export const metadata = {
-//   title: "RLMG 2025",
-//   description: "New Website",
-//   authors: [{ name: 'Dave Kobrenski' }, { name: 'RLMG', url: 'https://rlmg.com' }],
-// };
-
-// export async function generateMetadata({ params, searchParams }, parent) {
-//   // read route params
-//   const id = (await params).id
-
-//   // fetch data
-//   const product = await fetch(`https://.../${id}`).then((res) => res.json())
-
-//   // optionally access and extend (rather than replace) parent metadata
-//   const previousImages = (await parent).openGraph?.images || []
-
-//   return {
-//     title: product.title,
-//     openGraph: {
-//       images: ['/some-specific-page-image.jpg', ...previousImages],
-//     },
-//   }
-// }

@@ -1,8 +1,19 @@
+'use client';
+import { useRouter } from 'next/navigation';
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import { RxCaretLeft } from "react-icons/rx";
 
-export const Button = ({ label, type = 'button', shortLabel, active = false }) => {
+export const Button = ({ label, type = 'button', shortLabel, active = false, backButton = false }) => {
+    const router = useRouter();
 
+    const handleClick = () => {
+        if (backButton) {
+            router.back();
+        } else {
+            return false;
+        }
+    };
     if (type === 'filter') {
         return (
             <>
@@ -16,22 +27,10 @@ export const Button = ({ label, type = 'button', shortLabel, active = false }) =
 
     return (
         <>
-            <button className="btn btn-primary">{label}</button>
+            <button className={`btn btn-primary ${backButton ? 'gap-0' : ''}`} onClick={handleClick}>
+                {backButton && <RxCaretLeft className="inline h-6 w-6 -ml-2.5" />}
+                {label}
+            </button>
         </>
     );
 };
-
-Button.propTypes = {
-    /** The content of the paragraph */
-    label: PropTypes.string,
-    /** What type of button is it? Normal button or blog/project filter */
-    type: PropTypes.oneOf(['button', 'filter']),
-    /** for filter btn, is the button the active one? */
-    active: PropTypes.bool,
-}
-
-Button.defaultProps = {
-    label: 'Button text',
-    type: 'button',
-    active: false,
-}

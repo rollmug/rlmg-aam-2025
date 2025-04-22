@@ -4,6 +4,9 @@ let cacheDelay = parseInt(process.env.CACHE_DELAY); //seconds, ie 120
 export const revalidate = (Number.isInteger(cacheDelay) && cacheDelay > 0 ? cacheDelay : 120);
 
 export const formatPageData = async (slug) => {
+
+  slug = "work"; // for the kiosk app, force it to always be the work page
+
   try {
     const globalSettings = await getGlobalSettings();
     const navigation = await getNavigationSettings();

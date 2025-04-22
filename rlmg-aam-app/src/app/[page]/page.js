@@ -21,6 +21,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
     const page = (await params).page
     const data = await formatPageData(page);
+    console.log('page:', page);
     // console.log('pageData:', data);
 
     if (data.error) {

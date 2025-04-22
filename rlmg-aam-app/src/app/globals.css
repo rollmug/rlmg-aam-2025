@@ -78,7 +78,7 @@ hr {
 }
 
 .section-padded {
-  @apply w-full max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 xl:px-12 2xl:px-12;
+  @apply w-full mx-auto px-16 xl:px-24;
 }
 
 .section-padded.full-mobile {
@@ -166,11 +166,11 @@ ul li {
 }
 
 .btn.btn-filter {
-  @apply bg-neutral text-primary-content btn-xs md:btn-sm lg:btn-md border-[1px] md:border-2 border-primary  text-xs md:text-sm font-normal md:font-bold h-6 md:h-9 min-h-6 md:min-h-9;
+  @apply bg-neutral text-primary-content btn-xs md:btn-sm lg:btn-md border-[1px] md:border-[2px] border-white  text-xs md:text-sm font-normal md:font-bold h-6 md:h-8 min-h-6 md:min-h-8;
 }
 
 .btn.btn-filter.active {
-  @apply bg-primary;
+  @apply bg-primary border-primary;
 }
 
 .navbar .menu li:not(.mobile-menu-item).active {

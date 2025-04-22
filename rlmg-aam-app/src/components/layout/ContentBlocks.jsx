@@ -31,6 +31,9 @@ import { BlogMainPage } from "./Blog";
 import { BlogPostBanner } from "../ui/BlogBanner";
 import { RichText } from "../content-blocks/RichText";
 import { SingleImage } from "../content-blocks/SingleImage";
+import Image from "next/image";
+import { Button } from "../ui/Button";
+import Link from "next/link";
 
 export default async function getBase64(imageUrl) {
     try {
@@ -52,13 +55,6 @@ export default async function getBase64(imageUrl) {
 export const ContentBlocks = async ({ data, blogFilters }) => {
     const blocks = data.contentBlocks;
     const pageData = data.pageData;
-
-    // pageLayoutParams: data.layoutParams, footerArgs, socialLinks
-    //const { pageLayoutParams } = data;
-    //const { footerArgs } = pageLayoutParams;
-
-    // console.log('Social Links:', data.layoutParams.footerArgs.socialLinks);
-    // console.log('additionalEmailAddresses:', data.globalSettings.additionalEmailAddresses); 
 
     const bannerVars = [
         'bannerTextPlacement',
@@ -114,6 +110,12 @@ export const ContentBlocks = async ({ data, blogFilters }) => {
 
         return (
             <>
+                <BlogMainPage blogData={blogData} posts={posts} blogFilters={blogFilters} />
+
+                {/* {
+                    blocks.map((block, index) => <ContentBlock key={index} block={block} />)
+                } */}
+
                 <Banner
                     bannerTextPlacement={`center`}
                     bannerHeader={blogData.blogName}
@@ -121,31 +123,26 @@ export const ContentBlocks = async ({ data, blogFilters }) => {
                     blogButtons={blogButtons}
                     isBlog={true}
                 />
-
-                <BlogMainPage blogData={blogData} posts={posts} blogFilters={blogFilters} />
-
-                {
-                    blocks.map((block, index) => <ContentBlock key={index} block={block} />)
-                }
             </>
         );
     } else if (pageData.pageType === 'blogPost') {
-        // const bannerImage = pageData.bannerImage ? formatImageURL(pageData.bannerImage) : null;
-        // const bannerBGVideo = pageData.bannerBGVideo ? formatImageURL(pageData.bannerBGVideo) : null;
-
-        // // const myBlurDataUrl = await getBase64('http://localhost:3000/coffee.jpg')
-        // let blurDataUrl;
-        // if(bannerImage && bannerBGVideo) {
-        //     blurDataUrl = await getBase64(bannerImage);
-        // }
-
         return (
             <>
                 <BlogPostBanner postData={pageData} />
 
                 {
-                    blocks.map((block, index) => <ContentBlock key={index} block={block} />)
+                    blocks
+                        .filter((block) => block.collection !== 'block_featuredPosts')
+                        .map((block, index) => <ContentBlock key={index} block={block} />)
                 }
+
+                <section className={`section-padded flex justify-center items-center pt-6 pb-20`}>
+                    <Image src="/big-logo.png" alt="Logo" width={405} height={200} className={`w-[270px] h-auto`} />
+                </section>
+
+                <div className="fixed bottom-8 left-16 xl:left-24">
+                    <Button label={`Back`} backButton={true} />
+                </div>
             </>
         );
     } else {
@@ -360,7 +357,7 @@ const ContentBlock = async ({ block }) => {
                             width: img.width,
                             height: img.height,
                             filesize: img.filesize,
-                            imageAltTag: image.imageSliderImages_id.imageAltTag ? 
+                            imageAltTag: image.imageSliderImages_id.imageAltTag ?
                                 encode(image.imageSliderImages_id.imageAltTag) : (image.imageSliderImages_id.imageTitle ? encode(image.imageSliderImages_id.imageTitle) : ''),
                         };
                     }

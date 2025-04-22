@@ -20,7 +20,7 @@ export const FeaturedPosts = ({ headerText, linkToPage, buttonText, template, po
             <ContentSection standout={standout} template={template} className={`featured-posts w-full ${standout ? 'with-standout' : ''}`}>
                 <div className={`section-padded ${className}`}>
                     <div className="flex flex-row flex-wrap justify-start gap-0">
-                        <h2 className={`my-0 lg:w-1/2 order-1 text-lgr md:text-xl lg:text-2xl ${template === 'dark' ? 'text-white' : ''} `}>{headerText ? headerText : 'Featured Posts'}</h2>
+                        {/* <h2 className={`my-0 lg:w-1/2 order-1 text-lgr md:text-xl lg:text-2xl ${template === 'dark' ? 'text-white' : ''} `}>{headerText ? headerText : 'Featured Posts'}</h2> */}
                         <div className={`order-3 lg:order-2 lg:w-1/2 text-right`}>
                             {(buttonText && linkToPage) &&
                                 <Link href={linkToPage}>
@@ -28,7 +28,7 @@ export const FeaturedPosts = ({ headerText, linkToPage, buttonText, template, po
                                 </Link>
                             }
                         </div>
-                        <div className="my-5 lg:my-8 order-2 lg:order-3 basis-full grid lg:grid-cols-2 grid-flow-row auto-rows-max gap-x-6 gap-y-10 md:gap-y-16 xl:gap-y-20">
+                        <div className="my-5 lg:my-8 !mb-0 order-2 lg:order-3 basis-full grid lg:grid-cols-3 grid-flow-row auto-rows-max gap-x-6 gap-y-12">
                             {posts.map((post, index) => (
                                 <div key={index} className="flex flex-col lg:gap-0.5">
                                     <div className={`aspect-video flex justify-center items-center mb-2 lg:mb-4 w-full max-w-full`}>
