@@ -7,7 +7,7 @@ import { ContentBlocks } from "@/components/layout/ContentBlocks";
 import { BlogFilterProvider } from "../blogFilterContext";
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// export const revalidate = 0;
 
 export async function generateMetadata({ params }) {
     let data;
