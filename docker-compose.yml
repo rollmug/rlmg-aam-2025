@@ -28,6 +28,7 @@ services:
     build:
       context: ./rlmg-aam-app
       # above is the relative path to the app directory
+      network: directus
     restart: always
     environment:
       NODE_ENV: production
