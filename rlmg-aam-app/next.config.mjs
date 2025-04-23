@@ -29,8 +29,8 @@ const nextConfig = {
                 pathname: '/assets/**/**',
             },
             {
-                protocol: 'https',
-                hostname: 'directus.rlmg.com',
+                protocol: 'http',
+                hostname: '66.42.81.168',
                 port: '',
                 pathname: '/assets/**/**',
             }
