@@ -5,6 +5,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { ContentBlocks } from "@/components/layout/ContentBlocks";
 import { BlogFilterProvider, BlogTopicProvider } from "@/app/blogFilterContext";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function generateMetadata({ params }) {
     let data;
     const page = (await params).page;

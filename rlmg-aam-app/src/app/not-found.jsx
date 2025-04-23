@@ -4,6 +4,9 @@ import { formatPageData } from "@/lib/webData";
 import { Error } from '@/components/ui/Error';
 import { ErrorPage } from '@/components/layout/ErrorPage';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function generateMetadata({ params }) {
     let data;
     try {
