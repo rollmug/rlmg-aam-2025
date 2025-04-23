@@ -25,11 +25,9 @@ services:
 
   rlmg-aam-app:
     container_name: rlmg-aam-app
-    image: davekobrenski:rlmg-aam-app
-    network_mode: container:directus
-    # build:
-    #   context: ./rlmg-aam-app
-      # above is the relative path to the app directory
+    build:
+      context: ./rlmg-aam-app
+      no_cache: true
     restart: always
     environment:
       NODE_ENV: production

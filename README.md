@@ -51,3 +51,7 @@ Run `npm run sync` to update this local server with latest data and files. This 
 Run `npm start` to build and launch the kiosk app and related services.
 
 Run `npm run stop` to stop all services.
+
+## Troubleshooting
+
+To force a clean slate, run `npm run stop` then `docker system prune -a` (then confirm). On next `npm start`, all images and containers will be rebuilt from scratch.

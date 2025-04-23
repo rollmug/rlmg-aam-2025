@@ -11,9 +11,13 @@ const formatImageURL = (image, presetKey) => {
     return `${process.env.NEXT_PUBLIC_FILES_BASE_URL}/${image.id}/${encodeURIComponent(image.filename_download)}${presetKey ? `?key=${presetKey}` : ''}`;
 };
 
+const formatVideoURL = (video) => {
+    return `${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${video.id}/${encodeURIComponent(video.filename_download)}`;
+};
+
 export const BlogPostBanner = ({ postData }) => {
     const bannerImage = postData.bannerImage ? formatImageURL(postData.bannerImage) : null;
-    const bannerBGVideo = postData.bannerBGVideo ? formatImageURL(postData.bannerBGVideo) : null;
+    const bannerBGVideo = postData.bannerBGVideo ? formatVideoURL(postData.bannerBGVideo) : null;
 
     // if (!postData || !postData.postTitle || !postData.postSubtitle) return null;
     if (!postData || !postData.postTitle) return null;

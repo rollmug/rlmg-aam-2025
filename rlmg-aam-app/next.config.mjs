@@ -22,6 +22,18 @@ const nextConfig = {
                 port: '8055',
                 pathname: '/assets/**/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'host.docker.internal',
+                port: '8055',
+                pathname: '/assets/**/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'directus.rlmg.com',
+                port: '',
+                pathname: '/assets/**/**',
+            }
         ],
     }
 };

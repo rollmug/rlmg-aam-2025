@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ContentSection } from "./ContentSection";
 import { Banner } from "@/components/ui/Banner";
 import { formatImageURL } from "@/lib/webData";
+import { formatVideoURL } from "@/lib/webData";
 import { TextWithImage } from "../content-blocks/TextWithImage";
 import { FeaturedPosts } from "../content-blocks/FeaturedPosts";
 import { BannerImageColumnText } from "../content-blocks/BannerImageColumnText";
@@ -84,7 +85,7 @@ export const ContentBlocks = async ({ data, blogFilters }) => {
                             bannerCallToActionText={pageData.bannerCallToActionText}
                             bannerImage={pageData?.bannerImage?.id ? formatImageURL(pageData.bannerImage) : null}
                             bannerImgAltTag={pageData?.bannerImage?.title ? encode(pageData.bannerImage.title) : ''}
-                            bannerBGVideo={pageData?.bannerBGVideo?.id ? formatImageURL(pageData.bannerBGVideo) : null}
+                            bannerBGVideo={pageData?.bannerBGVideo?.id ? formatVideoURL(pageData.bannerBGVideo) : null}
                             globalSettings={data.globalSettings}
                         />
                     )
@@ -208,7 +209,7 @@ const ContentBlock = async ({ block }) => {
                     postTitle: post.postTitle,
                     postSubtitle: post.postSubtitle,
                     urlSlug: urlSlug,
-                    hoverPreviewBGVideo: (post.hoverPreviewBGVideo) ? formatImageURL(post.hoverPreviewBGVideo) : null,
+                    hoverPreviewBGVideo: (post.hoverPreviewBGVideo) ? formatVideoURL(post.hoverPreviewBGVideo) : null,
                 };
             });
 
@@ -327,8 +328,8 @@ const ContentBlock = async ({ block }) => {
             // videoSrc, posterImage, blurDataURL, title, captionText
             // let blurDataUrl;
 
-            const videoURL = item.video.id ? formatImageURL(item.video) : null;
-            const posterImageURL = item.posterImage.id ? formatImageURL(item.posterImage) : null;
+            const videoURL = item.video.id ? formatVideoURL(item.video) : null;
+            const posterImageURL = item.posterImage.id ? formatVideoURL(item.posterImage) : null;
 
             // if(videoURL && posterImageURL) {
             //     blurDataUrl = await getBase64(posterImageURL);

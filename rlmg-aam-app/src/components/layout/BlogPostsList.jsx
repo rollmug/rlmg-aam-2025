@@ -11,6 +11,10 @@ const formatImageURL = (image, presetKey) => {
     return `${process.env.NEXT_PUBLIC_FILES_BASE_URL}/${image.id}/${encodeURIComponent(image.filename_download)}${presetKey ? `?key=${presetKey}` : ''}`;
 };
 
+const formatVideoURL = (video) => {
+    return `${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${video.id}/${encodeURIComponent(video.filename_download)}`;
+};
+
 export const BlogPostsList = ({ blogData, categoryName, slug, posts, blogFilters }) => {
     const { filter } = useContext(BlogFilterContext);
 
@@ -34,7 +38,7 @@ export const BlogPostsList = ({ blogData, categoryName, slug, posts, blogFilters
                 postTeaser: post.postTeaser,
                 urlSlug: `/${blogData.urlSlug}/${post.urlSlug}`,
                 bannerImage: (post.bannerImage) ? formatImageURL(post.bannerImage) : null, // formatImageURL(post.bannerImage),
-                hoverPreviewBGVideo: (post.hoverPreviewBGVideo) ? formatImageURL(post.hoverPreviewBGVideo) : null,
+                hoverPreviewBGVideo: (post.hoverPreviewBGVideo) ? formatVideoURL(post.hoverPreviewBGVideo) : null,
             };
         });
     }

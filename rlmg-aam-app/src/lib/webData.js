@@ -612,6 +612,10 @@ export const formatImageURL = (image, presetKey) => {
   return `${process.env.FILES_BASE_URL}/${image.id}/${encodeURIComponent(image.filename_download)}${presetKey ? `?key=${presetKey}` : ''}`;
 };
 
+export const formatVideoURL = (video) => {
+  return `${process.env.VIDEO_BASE_URL}/${video.id}/${encodeURIComponent(video.filename_download)}`;
+};
+
 export const formatFooterArgs = (globalSettings, bottomNav) => {
   const listItems = formatNavigation(bottomNav);
   const socialLinks = globalSettings.links.map((link) => {
