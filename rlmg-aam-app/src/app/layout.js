@@ -4,7 +4,7 @@ import { getGlobalSettings, getPageById, getNavigationSettings } from "@/lib/web
 import { DataProvider } from "./dataProvider";
 import "./globals.css";
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 // export const revalidate = 0;
 
 const nunitoSans = Nunito_Sans({
