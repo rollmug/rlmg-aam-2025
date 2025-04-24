@@ -61,7 +61,7 @@ const BlogButtons = ({ blogButtons }) => {
     }, []);
 
     const handleClick = (event, slug) => {
-        return true;
+        // return true;
         event.preventDefault();
         setFilter(slug);
         setTimeout(() => {

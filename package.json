@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node ./lib/index.js",
     "sync": "node ./lib/data-sync.js",
-    "launch": "node ./lib/index.js",
+    "launch": "node ./lib/launch-only.js",
     "kiosk": "\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --kiosk http://localhost:3000",
     "kiosk-mac": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --kiosk http://localhost:3000",
     "stop": "docker compose down",

@@ -6,6 +6,8 @@ directus/uploads/*
 *.DS_STORE
 config.sh
 .vscode
+next-cache/fetch-cache
+next-cache/images
 
 # dotenv environment variable files
 .env

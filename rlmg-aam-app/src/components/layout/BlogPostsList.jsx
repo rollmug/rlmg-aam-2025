@@ -18,7 +18,7 @@ const formatVideoURL = (video) => {
 export const BlogPostsList = ({ blogData, categoryName, slug, posts, blogFilters }) => {
     const { filter } = useContext(BlogFilterContext);
 
-    const transition = { duration: .5, ease: [.25, .1, .25, 1] };
+    const transition = { duration: 1, ease: [.25, .1, .25, 1] };
     const variants = {
         hidden: { filter: "blur(10px)", transform: "translateY(2rem)", opacity: 0 },
         visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
