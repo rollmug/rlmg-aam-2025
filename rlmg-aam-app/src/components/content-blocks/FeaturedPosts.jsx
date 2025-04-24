@@ -79,7 +79,7 @@ const FeaturedPost = ({ post, disableAnimations }) => {
                 <HoverVideoPlayer
                     videoSrc={post.hoverPreviewBGVideo}
                     pausedOverlay={
-                        <Image src={post.bannerImage} fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
+                        <Image src={post.bannerImage} priority fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
                     }
                     className="w-full h-full"
                 />
@@ -95,7 +95,7 @@ const FeaturedPost = ({ post, disableAnimations }) => {
                         <HoverVideoPlayer
                             videoSrc={post.hoverPreviewBGVideo}
                             pausedOverlay={
-                                <Image src={post.bannerImage} fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
+                                <Image src={post.bannerImage} priority fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
                             }
                             className="w-full h-full"
                         />
@@ -109,7 +109,7 @@ const FeaturedPost = ({ post, disableAnimations }) => {
         return (
             <div className="relative w-full h-full">
                 <Link href={post.urlSlug} className="absolute inset-0">
-                    <Image src={post.bannerImage} fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
+                    <Image src={post.bannerImage} priority fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
                 </Link>
             </div>
         );
@@ -119,7 +119,7 @@ const FeaturedPost = ({ post, disableAnimations }) => {
         <AnimatePresence>
             <motion.div initial={variants.hidden} whileInView={variants.visible} transition={transition} className="relative w-full h-full">
                 <Link href={post.urlSlug} className="absolute inset-0">
-                    <Image src={post.bannerImage} fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
+                    <Image src={post.bannerImage} priority fill sizes="(max-width: 1024px) 100vw, 50vw" alt={encode(post.postTitle)} className={`object-cover`} />
                 </Link>
             </motion.div>
         </AnimatePresence>
