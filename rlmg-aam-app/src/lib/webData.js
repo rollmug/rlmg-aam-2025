@@ -102,16 +102,18 @@ export const getGlobalSettings = async () => {
     return data.settings;
   } catch (error) {
     console.error("Error in getGlobalSettings:", error.message);
+
+    console.error(
+      "Directus networkError result:",
+      JSON.stringify(error.networkError?.result, null, 2)
+    );
+
     console.error(
       "Directus GraphQL errors:",
-      JSON.stringify(
-        error.result?.errors ??
-        error.graphQLErrors ??
-        error.networkError?.result?.errors,
-        null,
-        2
-      )
+      JSON.stringify(error.networkError?.result?.errors, null, 2)
     );
+
+    console.log("RAW DIRECTUS ERROR:", error.networkError?.result);
 
     throw error;
     return {
