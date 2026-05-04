@@ -533,9 +533,6 @@ const globalSettingsQuery = gql`query Settings {
     }
     emailPlatform
     emailAddress
-    mailChimpAPIKey
-    mailChimpListID
-    mailChimpServerPrefix
     links {
       id
       order
