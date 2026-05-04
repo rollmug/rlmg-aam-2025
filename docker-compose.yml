@@ -28,7 +28,7 @@ services:
     build:
       context: ./rlmg-aam-app
       no_cache: true
-    restart: always
+    restart: no
     # volumes:
     #   - ./next-cache:/app/.next/cache
     environment:
