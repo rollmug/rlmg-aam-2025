@@ -101,7 +101,10 @@ export const getGlobalSettings = async () => {
 
     return data.settings;
   } catch (error) {
-    console.error('Error in getGlobalSettings:', error);
+    console.error('Error in getGlobalSettings:', error.message);
+    console.dir(error, { depth: null });
+    console.error('Directus GraphQL errors:', JSON.stringify(error.result?.errors, null, 2));
+    throw error;
     return {
       error: error.message,
       message: "Error fetching global settings"
