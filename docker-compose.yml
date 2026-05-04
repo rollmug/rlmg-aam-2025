@@ -29,8 +29,8 @@ services:
       context: ./rlmg-aam-app
       no_cache: true
     restart: always
-    volumes:
-      - ./next-cache:/app/.next/cache
+    # volumes:
+    #   - ./next-cache:/app/.next/cache
     environment:
       NODE_ENV: production
     env_file:
